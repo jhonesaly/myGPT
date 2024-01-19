@@ -1,9 +1,12 @@
 import OpenAI from "openai";
+import dotenv from "dotenv";
 
-class openai {
-  constructor(apiKey) {
+dotenv.config();
+
+class OpenAIChat {
+  constructor() {
     this.openai = new OpenAI({
-      apiKey: apiKey,
+      apiKey: process.env.OPENAI_API_KEY,
     });
   }
 
@@ -27,4 +30,4 @@ class openai {
   }
 }
 
-module.exports = openai;
+module.exports = OpenAIChat;
