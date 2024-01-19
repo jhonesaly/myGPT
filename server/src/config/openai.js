@@ -1,20 +1,30 @@
 import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+class openai {
+  constructor(apiKey) {
+    this.openai = new OpenAI({
+      apiKey: apiKey,
+    });
+  }
 
-const response = await openai.chat.completions.create({
-  model: "gpt-3.5-turbo",
-  messages: [
-    {
-      "role": "user",
-      "content": "prompt_test"
-    }
-  ],
-  temperature: 0,
-  max_tokens: 256,
-  top_p: 1,
-  frequency_penalty: 0,
-  presence_penalty: 0,
-});
+  async generateResponse(prompt) {
+    const response = await this.openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          "role": "user",
+          "content": prompt,
+        },
+      ],
+      temperature: 0,
+      max_tokens: 256,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0,
+    });
+
+    return response.data.choices[0].message.content;
+  }
+}
+
+module.exports = openai;
