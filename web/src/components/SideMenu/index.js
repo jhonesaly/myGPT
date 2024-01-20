@@ -12,4 +12,4 @@ const SideMenu = ()=> {
     )
 }
 
-export default SideMenu
+export {SideMenu}
