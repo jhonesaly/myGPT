@@ -1,5 +1,5 @@
 import React from 'react'
-import './Sidemenu.css'
+import './styles.css'
 
 const SideMenu = ()=> {
     return(
