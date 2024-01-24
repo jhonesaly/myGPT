@@ -74,3 +74,8 @@
   resize: none;
 }
 
+.chat-log{
+  text-align: left;
+  white-space: "pre-wrap";
+}
+
