@@ -3,7 +3,8 @@ import { useState } from 'react';
 import './styles/App.css';
 import './styles/reset.css';
 
-import {SideMenu} from './components/SideMenu';
+import { SideMenu } from './components/SideMenu';
+import { ChatMessage } from './components/ChatMessage';
 
 function App() {
 
@@ -16,7 +17,14 @@ function App() {
   return (
     <div className="App">
       <SideMenu />
-      <h1>Working</h1>
+      <section className='chatbox'>
+        <div className='chat-log'>
+          {chatlog.map((message, index)=>(
+            <ChatMessage key={index} message={message}/>
+          ))}
+        </div>
+        
+      </section>
     </div>
   );
 }
