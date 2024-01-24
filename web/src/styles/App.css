@@ -79,3 +79,6 @@
   white-space: "pre-wrap";
 }
 
+.chat-message.chatgpt{
+  background-color: #444654;
+}
