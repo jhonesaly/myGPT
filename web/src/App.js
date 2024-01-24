@@ -17,13 +17,25 @@ function App() {
   return (
     <div className="App">
       <SideMenu />
+
       <section className='chatbox'>
         <div className='chat-log'>
           {chatlog.map((message, index)=>(
             <ChatMessage key={index} message={message}/>
           ))}
         </div>
-        
+
+        <div className='chat-input-holder'>
+          <form>
+            <input
+              className='chat-input-text-area'
+              rows='1'
+              value={input}
+              
+            >
+            </input>
+          </form>
+        </div>
       </section>
     </div>
   );
