@@ -11,7 +11,7 @@ import { makeRequest } from './api/api';
 function App() {
 
   const [input, setInput] = useState("")
-  const [chatlog, setChatLog] = useState([{
+  const [chatLog, setChatLog] = useState([{
     user: "gpt",
     message: "Como posso te ajudar hoje?"
   }])
@@ -24,7 +24,7 @@ function App() {
     response = response.data.split('\n')
     .map(line => <p>{line}</p>);
 
-    setChatLog([...chatlog, {
+    setChatLog([...chatLog, {
       user: 'me',
       message: `${input}`
     },{
@@ -40,7 +40,7 @@ function App() {
 
       <section className='chatbox'>
         <div className='chat-log'>
-          {chatlog.map((message, index)=>(
+          {chatLog.map((message, index)=>(
             <ChatMessage key={index} message={message}/>
           ))}
         </div>
