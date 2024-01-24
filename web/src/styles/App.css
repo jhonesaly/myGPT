@@ -44,3 +44,11 @@
     transform: rotate(360deg);
   }
 }
+
+.chatbox{
+  flex:1;
+  background-color: #353541;
+  position: relative;
+  overflow-y: auto;
+}
+
